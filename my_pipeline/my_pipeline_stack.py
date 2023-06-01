@@ -12,7 +12,7 @@ class MyPipelineStack(cdk.Stack):
                         synth=ShellStep("Synth",
                             input=CodePipelineSource.git_hub("Sreshthak15/final", "main"),
                             commands=["echo '#!/bin/bash' > /codebuild/output/tmp/script.sh",
-                                "cat /codebuild/output/tmp/script.sh"
+                                "cat /codebuild/output/tmp/script.sh",
                                 "source .venv/bin/activate",
                                 "python -m pip install -r requirements.txt",
                                 "cdk --version",
